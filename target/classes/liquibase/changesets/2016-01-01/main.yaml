@@ -1,0 +1,4 @@
+databaseChangeLog:
+    - include: 
+        file: load-master.yaml
+        relativeToChangelogFile: true

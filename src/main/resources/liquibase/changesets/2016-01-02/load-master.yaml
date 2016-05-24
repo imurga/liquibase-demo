@@ -1,0 +1,38 @@
+databaseChangeLog:
+    - changeSet:
+        id: LoadMasterTables2
+        author: ingrid.murga@gmail.com
+        comment: Here write a comment related to the operation
+        changes:
+            - loadData:
+                file: data/media.csv
+                relativeToChangelogFile: true
+                separator: ','
+                quotchar: '"'
+                tableName: MEDIA
+                columns:
+                    - column:
+                        name: MEDIA_ID
+                        type: NUMERIC
+                    - column:
+                        name: ALT_TEXT
+                        type: STRING
+                    - column:
+                        name: TITLE
+                        type: STRING
+                    - column:
+                        name: URL
+                        type: STRING
+            - loadData:
+                file: data/role.csv
+                relativeToChangelogFile: true
+                separator: ','
+                quotchar: '"'
+                tableName: ROLE
+                columns:
+                    - column:
+                        name: ROLE_ID
+                        type: NUMERIC
+                    - column:
+                        name: ROLE_NAME
+                        type: STRING

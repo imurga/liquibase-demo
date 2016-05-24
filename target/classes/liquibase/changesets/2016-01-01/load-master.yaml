@@ -1,0 +1,38 @@
+databaseChangeLog:
+    - changeSet:
+        id: LoadMasterTables1
+        author: ingrid.murga@gmail.com
+        comment: Here write a comment related to the operation
+        changes:
+            - loadData:
+                file: data/countries.csv
+                relativeToChangelogFile: true
+                separator: ','
+                quotchar: '"'
+                tableName: COUNTRY
+                columns:
+                    - column:
+                        name: ABBREVIATION
+                        type: STRING
+                    - column:
+                        name: NUMERIC_CODE
+                        type: NUMERIC
+                    - column:
+                        name: NAME
+                        type: STRING
+            - loadData:
+                file: data/currency.csv
+                relativeToChangelogFile: true
+                separator: ','
+                quotchar: '"'
+                tableName: CURRENCY
+                columns:
+                    - column:
+                        name: CURRENCY_CODE
+                        type: STRING
+                    - column:
+                        name: DEFAULT_FLAG
+                        type: NUMERIC
+                    - column:
+                        name: FRIENDLY_NAME
+                        type: STRING
