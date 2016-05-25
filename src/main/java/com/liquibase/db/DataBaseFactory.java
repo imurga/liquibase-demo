@@ -12,7 +12,7 @@ import org.hibernate.internal.SessionImpl;
 public class DataBaseFactory {
 
 	private static final List<String> FILES = Arrays
-			.asList("/db-bps_core/bps_user_info.xml");
+			.asList("/liquibase/database-changelog.yaml");
 
 	public static void runLiquiBaseScripts() throws LiquibaseException {
 		LiquiBaseHelper.runScripts(getConnection(), FILES);
